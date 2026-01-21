@@ -45,7 +45,13 @@ So clean from dust old RPI with a touchscreen, install code and have fun.
 
 ###   Widgets. Edit example.json file
    First is name of area (example: Bedroom)
-   
+
+    Connection status:
+       Button/label for connection status to HA .
+       When connection will lost, it will be turn to red button, click will force reconnection.
+       
+       {"entity_id": " ", "name": " ", "widget_type": "ha_connection",  "info_type": "label"}      
+       
      Label:
      
        {"entity_id": " ", "name": "Lights", "widget_type": "label",  "info_type": "label"}   - Label with name of widget group
