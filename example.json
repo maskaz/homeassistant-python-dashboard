@@ -1,0 +1,27 @@
+{
+  "Bedroom": [
+  
+    {"entity_id": " ", "name": " ", "widget_type": "ha_connection",  "info_type": "label"},      
+    
+    {"entity_id": " ", "name": "Lights", "widget_type": "label",  "info_type": "label"},     
+    {"entity_id": "light.bedroom_lamp", "name": "Bedroom Light", "widget_type": "light",  "info_type": "temp_color"},
+    {"entity_id": "switch.floor_lamp", "name": "Floor lamp", "widget_type": "switch",  "info_type": "switch"},
+
+    {"entity_id": " ", "name": "Control", "widget_type": "label",  "info_type": "label"}, 
+
+    {"entity_id": "cover.bedroom", "name": "Covers", "widget_type": "cover",  "info_type": "cover"},
+    {"entity_id": "fan.ceiling_fan", "name": "Ceiling fan", "widget_type": "fan",  "info_type": "fan"},
+    {"entity_id": "number.fan", "name": "Number fan", "widget_type": "number_slider",  "info_type": "0.500.50"},
+
+    {"entity_id": " ", "name": "Climat", "widget_type": "label",  "info_type": "label"}, 
+    {"entity_id": "climate.bedroom_thermostat", "name": "Bedroom thermostat", "widget_type": "thermostat",  "info_type": "thermostat"},
+    
+    
+    
+    {"entity_id": " ", "name": "Sensors", "widget_type": "label",  "info_type": "label"}, 
+    {"entity_id": "sensor.bedrrom_temp", "name": "Temperature", "widget_type": "sensor_chart",  "info_type": "temperature"},
+    {"entity_id": "todo.shopping_card", "name": "Shoping", "widget_type": "todo",  "info_type": "todo"},
+    {"entity_id": "sensor.listofevents", "name": "Calendar", "widget_type": "calendar",  "info_type": "calendar"}
+
+  ]
+}
