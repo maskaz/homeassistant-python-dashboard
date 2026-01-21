@@ -120,7 +120,14 @@ So clean from dust old RPI with a touchscreen, install code and have fun.
        {"entity_id": "sensor.listofevents", "name": "Calendar", "widget_type": "calendar",  "info_type": "calendar"}
 
          This widget will open list of events from calendar. 
-         To work you need add a template to your Home Assistant configuration.yaml file:
+         To work this widget needs additional template added to your Home Assistant configuration.yaml:
+
+
+        !! remember about commas after each  "{"entity_id":(...)" lines, but last cannot have it !!
+        Save json file
+
+        
+Calendar template:
 
 template:
   - trigger:
@@ -145,7 +152,8 @@ template:
              events: "{{ calendar_events['calendar.name_of_your_existing_calendar'].events  }}"
 
 
-        Save json file
+
+
 
 ###   Run
       python3 areas.py example.json
