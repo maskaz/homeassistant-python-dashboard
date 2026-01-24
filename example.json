@@ -22,6 +22,9 @@
     
     {"entity_id": " ", "name": "Sensors", "widget_type": "label",  "info_type": "label"}, 
     {"entity_id": "sensor.bedrrom_temp", "name": "Temperature", "widget_type": "sensor_chart",  "info_type": "temperature"},
+
+    {"entity_id": " ", "name": "Todo and Calendar", "widget_type": "label",  "info_type": "label"}, 
+    
     {"entity_id": "todo.shopping_card", "name": "Shoping", "widget_type": "todo",  "info_type": "todo"},
     {"entity_id": "sensor.listofevents", "name": "Calendar", "widget_type": "calendar",  "info_type": "calendar"}
 
