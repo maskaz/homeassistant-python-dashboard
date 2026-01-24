@@ -156,9 +156,9 @@ Screenshots:
         
 Calendar template:
 
-#  - trigger:
-#      - platform: time_pattern
-#        minutes: /1
+  - trigger:
+      - platform: time_pattern
+        minutes: /1
       - platform: homeassistant
         event: start
     action:
@@ -178,7 +178,7 @@ Calendar template:
              events: "{{ calendar_events['calendar.name_of_your_existing_calendar'].events  }}"
 
 Weather templates:
-
+```
   - trigger:
       - platform: time_pattern
         hours: /1
@@ -224,7 +224,7 @@ Weather templates:
           wind_speed_unit: "{{ state_attr('weather.forecast_dom', 'wind_speed_unit') }}"
           precipitation_unit: "{{ state_attr('weather.forecast_dom', 'precipitation_unit') }}"
           forecast: "{{ daily['weather.forecast_dom'].forecast }}"
-
+```
 
 
 
