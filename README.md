@@ -29,6 +29,15 @@ So clean from dust old RPI with a touchscreen, install code and have fun.
     pip install python-dateutil
 
 # Clone repo
+  git clone https://github.com/maskaz/homeassistant-python-dashboard.git
+
+  From folder Font install material.tff font
+
+  For Debian based: 
+
+  #sudo su
+  #cp material.ttf /usr/local/share/fonts/
+  #dpkg-reconfigure fontconfig-config
 
 ## Configuration:
 
@@ -45,6 +54,14 @@ So clean from dust old RPI with a touchscreen, install code and have fun.
 
 ###   Widgets. Edit example.json file
    First is name of area (example: Bedroom)
+
+     Weather:
+
+      {"entity_id": "sensor.your_outside_temp_sensor", "name": "Pogoda i wydarzenia", "widget_type": "weather",  "info_type": "pogoda"},
+
+         This widget will show  weather conditions hourly and daily (View can be changed when after click on widget) 
+         "entity_id" can be configured or not. If not, value will be take from HA weather entity.
+         To work this widget needs two additional templates added to your Home Assistant configuration.yaml.
 
     Connection status:
        Button/label for connection status to HA .
@@ -135,7 +152,6 @@ So clean from dust old RPI with a touchscreen, install code and have fun.
         
 Calendar template:
 
-template:
   - trigger:
       - platform: time_pattern
         minutes: /1
@@ -157,6 +173,53 @@ template:
         attributes:
              events: "{{ calendar_events['calendar.name_of_your_existing_calendar'].events  }}"
 
+Weather templates:
+
+  - trigger:
+      - platform: time_pattern
+        hours: /1
+      - platform: homeassistant
+        event: start
+    action:
+      - service: weather.get_forecasts
+        data:
+          type: hourly
+        target:
+          entity_id: weather.forecast_dom
+        response_variable: hourly
+    sensor:
+      - name: Pogoda Godzinowa
+        state: "{{ states('weather.forecast_dom') }}"
+        attributes:
+          temperature: "{{ state_attr('weather.forecast_dom', 'temperature') }}"
+          temperature_unit: "{{ state_attr('weather.forecast_dom', 'temperature_unit') }}"
+          humidity: "{{ state_attr('weather.forecast_dom', 'humidity') }}"
+          cloud_coverage: "{{ state_attr('weather.forecast_dom', 'cloud_coverage') }}"
+          wind_speed: "{{ state_attr('weather.forecast_dom', 'wind_speed') }}"
+          wind_speed_unit: "{{ state_attr('weather.forecast_dom', 'wind_speed_unit') }}"
+          precipitation_unit: "{{ state_attr('weather.forecast_dom', 'precipitation_unit') }}"
+          forecast: "{{ hourly['weather.forecast_dom'].forecast }}"
+
+  - trigger:
+      - platform: time_pattern
+        hours: /1
+      - platform: homeassistant
+        event: start
+    action:
+      - service: weather.get_forecasts
+        data:
+          type: daily
+        target:
+          entity_id: weather.forecast_dom
+        response_variable: daily
+    sensor:
+      - name: Pogoda Dzienna
+        state: "{{ states('weather.forecast_dom') }}"
+        attributes:
+          temperature_unit: "{{ state_attr('weather.forecast_dom', 'temperature_unit') }}"
+          wind_speed_unit: "{{ state_attr('weather.forecast_dom', 'wind_speed_unit') }}"
+          precipitation_unit: "{{ state_attr('weather.forecast_dom', 'precipitation_unit') }}"
+          forecast: "{{ daily['weather.forecast_dom'].forecast }}"
 
 
 
