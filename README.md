@@ -8,6 +8,8 @@ Goal is to have Home Assistant control dashboard without heavyweight Web Browser
 So clean from dust old RPI with a touchscreen, install code and have fun.
 Screenshots:
 
+![screenshot](view_1.png)
+
 ![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/maskaz/homeassistant-python-dashboard/refs/heads/main/view_1.png)) ![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/maskaz/homeassistant-python-dashboard/refs/heads/main/view_2.png))
 ## Installation:
 
