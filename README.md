@@ -156,9 +156,9 @@ Screenshots:
         
 Calendar template:
 
-  - trigger:
-      - platform: time_pattern
-        minutes: /1
+#  - trigger:
+#      - platform: time_pattern
+#        minutes: /1
       - platform: homeassistant
         event: start
     action:
