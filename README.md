@@ -6,7 +6,9 @@ Python Dashboard was created for low performance single-board computer (like Ras
 Goal is to have Home Assistant control dashboard without heavyweight Web Browser usage.
 
 So clean from dust old RPI with a touchscreen, install code and have fun.
+Screenshots:
 
+![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/maskaz/homeassistant-python-dashboard/refs/heads/main/view_1.png)) ![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/maskaz/homeassistant-python-dashboard/refs/heads/main/view_2.png))
 ## Installation:
 
 # Install needed python libraries
