@@ -155,7 +155,7 @@ Screenshots:
 
         
 Calendar template:
-
+```
   - trigger:
       - platform: time_pattern
         minutes: /1
@@ -176,6 +176,7 @@ Calendar template:
         state:   "{{ calendar_events['calendar.name_of_your_existing_calendar'].events | count() }}"
         attributes:
              events: "{{ calendar_events['calendar.name_of_your_existing_calendar'].events  }}"
+```
 
 Weather templates:
 ```
