@@ -1,5 +1,7 @@
 {
   "Bedroom": [
+
+    {"entity_id": "sensor.your_outside_temp_sensor", "name": "Pogoda i wydarzenia", "widget_type": "weather",  "info_type": "weather"},
   
     {"entity_id": " ", "name": " ", "widget_type": "ha_connection",  "info_type": "label"},      
     
